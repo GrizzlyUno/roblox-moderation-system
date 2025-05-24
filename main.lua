@@ -23,18 +23,22 @@ Players.PlayerAdded:Connect(function(player)
 	
 	
 	player.Chatted:Connect(function(str)
+				print(1)
 		if string.sub(str, 1,1) == ":" then
 			for i, cmdstr in string.split(str, " ") do
 				local cmdstr1 = cmdstr
 				if i == 1 then
+							print(13)
 					cmdstr1 = string.split(cmdstr, ":")
 					table.insert(cmd_tab, cmdstr1[2])
 				else
+							print(12)
 					table.insert(cmd_tab, cmdstr1)
 				end
 			end
 			
 			if Cmd_Module[cmd_tab[1]] then
+						print(11)
 				if player:GetAttribute("Authority") then
 					if Cmd_Module[cmd_tab[1]].Authority <= player:GetAttribute("Authority") then
 						Cmd_Module[cmd_tab[1]].Function(cmd_tab[2], cmd_tab[3], cmd_tab[4], cmd_tab[5], cmd_tab[6])
