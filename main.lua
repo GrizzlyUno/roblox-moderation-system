@@ -1,5 +1,5 @@
 local Players = game:GetService("Players")
-
+print("idiot")
 local Cmd_Module = require(script.Commands)
 local Access_Module = require(script.Access)
 
